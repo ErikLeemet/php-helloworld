@@ -1,5 +1,5 @@
 <?php
-require_once "config.php"
+require_once "config.php";
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
