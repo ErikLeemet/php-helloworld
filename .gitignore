@@ -1,1 +1,4 @@
 config.php
+
+var_dump($book);
+echo $book["title"];

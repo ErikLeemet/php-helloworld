@@ -13,10 +13,21 @@ try {
 } catch (\PDOException $e) {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
-$stmt = $pdo->prepare('SELECT * FROM books where id = ');
-$stmt->execute();
-$book = $stmt->fetch();
 
-var_dump($book);
-echo $book["title"];
 echo $_GET["id"];
+
+$stmt = $pdo->prepare('SELECT * FROM books where id =:id ');
+$stmt->execute([':id' => $_GET["id"]]);
+$book = $stmt->fetch();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?=$book["title"]?></title>
+</head>
+<body>
+    <h1><?=$book["title"]?></h1>
+</body>
+</html>

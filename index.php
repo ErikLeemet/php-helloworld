@@ -14,5 +14,5 @@ try {
 }
 $stmt = $pdo->query('SELECT * FROM books');
 while ($row = $stmt->fetch()) {
-    echo "<a href='books.php?id=". $row['id']. "'>".$row['title']. "</a>"."<br>";
+//    echo "<a href='books.php?id=". $row['id']. "'>".$row['title']. "</a>"."<br>";
 }
